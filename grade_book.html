@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Õpilase keskkond</title>
+        <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+        <style>
+            .container{
+                width: 70%;
+            }
+            .table{
+                width: 750px;
+            }
+            #user{
+                color: black;
+            }
+
+        </style>
+    </head>
+    <body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Õppekeskkond</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Hinnete leht <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Töö esitamine</a></li>
+
+                </ul>
+                <!--<p class="navbar-text navbar-right">Signed in as <b> Lana Banana </b> <a href="#" class="navbar-link">Logi välja</a></p>-->
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a id="user"><b>Lana Banana</b></a></li>
+                    <li><a href="#">Sign out</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Kasutajaliidesed</h2>
+
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Töö nimi</th>
+                            <th>Hinne</th>
+                            <th style="width: 50px;">Kuupäev</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Praktikum nr 1</td>
+                            <td>1</td>
+                            <td>10.02.16</td>
+                        </tr>
+                        <tr>
+                            <td>Praktikum nr 2</td>
+                            <td>1</td>
+                            <td>17.02.16</td>
+                        </tr>
+                        <tr>
+                            <td>Praktikum nr 3</td>
+                            <td>1</td>
+                            <td>24.02.16</td>
+                        </tr>
+                        <tr class="info">
+                            <td>Labor nr 1</td>
+                            <td>11</td>
+                            <td>05.03.16</td>
+                        </tr>
+                        <tr>
+                            <td>Praktikum nr 4</td>
+                            <td>0</td>
+                            <td>12.03.16</td>
+                        </tr>
+                        <tr>
+                            <td>Praktikum nr 5</td>
+                            <td>1</td>
+                            <td>24.03.16</td>
+                        </tr>
+                        <tr class="info">
+                            <td>Labor nr 2</td>
+                            <td>15</td>
+                            <td>12.04.16</td>
+                        </tr>
+                        <tr>
+                            <td>Praktikum nr 6</td>
+                            <td>0</td>
+                            <td>20.04.16</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

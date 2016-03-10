@@ -1,77 +1,105 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-    <meta charset="utf-8">
-    <title>JavaScript Form Validation using a sample registration form</title>
-    <meta name="keywords" content="example, JavaScript Form Validation, Sample registration form" />
-    <meta name="description" content="This document is an example of JavaScript Form Validation using a sample registration form. " />
-    <link rel='stylesheet' href='js-form-validation.css' type='text/css' />
-    <script src="sample-registration-form-validation.js"></script>
-    <style>
-        h1 {
-            margin-left: 70px;
-        }
-        form li {
-            list-style: none;
-            margin-bottom: 5px;
-        }
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Welcome page</title>
+        <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-md-offset-3">
+                    <div class="panel panel-login">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <a href="#" class="active" id="login-form-link">Logi sisse</a>
+                                </div>
+                                <div class="col-xs-6">
+                                    <a href="#" id="register-form-link">Registratsioon</a>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <form id="login-form" action="#" method="post" role="form" style="display: block;">
+                                        <div class="form-group">
+                                            <input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="E-post" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Parool">
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-sm-6 col-sm-offset-3">
+                                                    <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Logi sisse">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="text-center">
+                                                        <a href="#" tabindex="5" class="forgot-password">Ei mäleta parooli?</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <form id="register-form" action="#" method="post" role="form" style="display: none;">
+                                        <div class="form-group">
+                                            <input type="text" name="fname" id="fname" tabindex="1" class="form-control" placeholder="Eesnimi" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="lname" id="lname" tabindex="1" class="form-control" placeholder="Perekonnanimi" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="E-post" value="">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Parool">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Kinnita parool">
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-sm-6 col-sm-offset-3">
+                                                    <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Registeeri!">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(function() {
+                $('#login-form-link').click(function(e) {
+                    $("#login-form").delay(100).fadeIn(100);
+                    $("#register-form").fadeOut(100);
+                    $('#register-form-link').removeClass('active');
+                    $(this).addClass('active');
+                    e.preventDefault();
+                });
+                $('#register-form-link').click(function(e) {
+                    $("#register-form").delay(100).fadeIn(100);
+                    $("#login-form").fadeOut(100);
+                    $('#login-form-link').removeClass('active');
+                    $(this).addClass('active');
+                    e.preventDefault();
+                });
 
-        form ul li label{
-            float: left;
-            clear: left;
-            width: 100px;
-            text-align: right;
-            margin-right: 10px;
-            font-family:Verdana, Arial, Helvetica, sans-serif;
-            font-size:14px;
-        }
-
-        form ul li input, select, span {
-            float: left;
-            margin-bottom: 10px;
-        }
-
-
-        [type="submit"] {
-            clear: left;
-            margin: 20px 0 0 230px;
-            font-size:18px
-        }
-
-        p {
-            margin-left: 70px;
-            font-weight: bold;
-        }
-
-    </style>
-</head>
-<body>
-<h1>Registration Form</h1>
-
-<form name='registration'>
-    <ul>
-        <li><label for="fname">First name:</label></li>
-        <li><input type="text" name="fname" size="50" /></li>
-
-        <li><label for="lname">Last name:</label></li>
-        <li><input type="text" name="lname" size="50" /></li>
-
-        <li><label for="passid">Password:</label></li>
-        <li><input type="password" name="passid" size="12" /></li>
-
-        <li><label for="pass_confirm">Confirm password:</label></li>
-        <li><input type="password" name="pass_confirm" size="12" /></li>
-
-        <li><label for="address">Address:</label></li>
-        <li><input type="text" name="address" size="50" /></li>
-
-        <li><label for="email">Email:</label></li>
-        <li><input type="text" name="email" size="50" /></li>
-
-    </ul>
-</form>
-
-
-
-
-</body>
+            });
+        </script>
+    </body>
 </html>  
