@@ -35,16 +35,17 @@
                                             <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Parool">
                                         </div>
                                         <div class="form-group">
-                                            <div class="container">
                                             <form action="">
-                                                <input type="radio"> Õpilane
-                                                <input type="radio"> Õppejõud<br>
-                                            </form>
-                                            </div>
-
+                                                <div class="radio-btn">
+                                                    <input class="radio-input" type="radio" name="test" id="oppejoud"/>
+                                                    <label class="radio-label">Õppejõud</label>
+                                                    <input class="radio-input" type="radio" name="test" id="opilane"/>
+                                                    <label class="radio-label">Õpilane</label>
+                                                </div>
+                                            </form><br/>
                                             <div class="row">
                                                 <div class="col-sm-6 col-sm-offset-3">
-                                                    <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Logi sisse">
+                                                    <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Logi sisse" onclick="checkButton()">
                                                 </div>
                                             </div>
                                         </div>
@@ -107,6 +108,27 @@
                 });
 
             });
+                function checkButton() {
+                    if ($('#oppejoud').is(':checked')) {
+
+                    } else if ($('#opilane').is(':checked')) {
+                        window.location.assign("grade_book.html");
+                    } else {
+                        alert('Please choose your role!');
+                    }
+                }
+
+
+
+               /*     if(document.getElementById('oppejoud').checked) {
+
+                    }else if(document.getElementById('opilane').checked) {
+                    }
+                    else {
+                        alert('Please choose your role!')
+                    }
+                }
+                */
         </script>
     </body>
 </html>  
