@@ -45,7 +45,7 @@
                                             </form><br/>
                                             <div class="row">
                                                 <div class="col-sm-6 col-sm-offset-3">
-                                                    <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Logi sisse" onclick="checkButton()">
+                                                    <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Logi sisse">
                                                 </div>
                                             </div>
                                         </div>
@@ -108,27 +108,19 @@
                 });
 
             });
-                function checkButton() {
-                    if ($('#oppejoud').is(':checked')) {
 
-                    } else if ($('#opilane').is(':checked')) {
-                        window.location.assign("grade_book.html");
-                    } else {
-                        alert('Please choose your role!');
-                    }
+            $('#login-form').on('submit', function(e) {
+                e.preventDefault();
+
+                if ($('#oppejoud').is(':checked')) {
+                    window.location.assign("hinnete_vaade.html");
+                } else if ($('#opilane').is(':checked')) {
+                    window.location.assign("grade_book.html");
+                } else {
+                    alert('Please choose your role!');
                 }
+            });
 
-
-
-               /*     if(document.getElementById('oppejoud').checked) {
-
-                    }else if(document.getElementById('opilane').checked) {
-                    }
-                    else {
-                        alert('Please choose your role!')
-                    }
-                }
-                */
         </script>
     </body>
 </html>  
